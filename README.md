@@ -10,5 +10,3 @@ Pour votre information, créer un compte sur PubliGame ne demande pas d'adresse 
 Bonne exploration, et comme avec MathRobot (autre projet), n'hésitez pas à mettre des commentaires sur la partie ci dessous!
 
 COMMENTAIRES : 
-
-.
