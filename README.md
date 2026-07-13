@@ -7,8 +7,6 @@ envoyant des messages sur un forum. Bref, pour accéder à Publigame, allez sur 
 
 Pour votre information, créer un compte sur PubliGame ne demande pas d'adresse mail, donc aucune donnée personnelle ne sera divulguée.
 
-ATTENTION : ce site est optimisé pour ordinateurs, il est déconseillé d'y accéder sur téléphone si sur tablette, il n'est pas très reponsive sur ces tailles d'écrans!
-
 Un deuxième version va être écrée, plus moderne avec plus de fonctionnalités!...
 
 Bonne exploration!
