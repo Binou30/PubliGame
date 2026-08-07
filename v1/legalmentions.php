@@ -18,6 +18,8 @@ session_start();
         body {
             margin: 0;
             min-height: var(--viewport-height);
+            overflow-x: hidden;
+            overflow-y: auto;
             color: var(--text);
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: transparent;
@@ -120,6 +122,8 @@ session_start();
             padding: clamp(0.5rem, 2vw, 0.9rem);
             padding-bottom: clamp(10rem, 14vw, 12rem);
             min-height: calc(var(--viewport-height) + 12rem);
+            display: flex;
+            flex-direction: column;
             background: rgba(7, 16, 34, 0.72) !important;
             border-radius: 12px !important;
             position: relative;

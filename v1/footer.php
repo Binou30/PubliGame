@@ -9,10 +9,12 @@
 <style>
 @import url("static/site.css");
     .site-footer{
-        position: fixed;
+        position: sticky;
         bottom: 0;
         left: 0;
         right: 0;
+        margin-top: auto;
+        width: 100%;
         text-align: center;
         z-index: 9999;
         pointer-events: none;
@@ -20,12 +22,15 @@
         border-top: 1px solid rgba(255, 255, 255, 0.08);
         padding: clamp(0.18rem, 0.8vw, 0.35rem) 0;
         transform: translateY(110%);
-        transition: transform 0.25s ease, opacity 0.25s ease;
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
     }
 
     .site-footer.visible{
         transform: translateY(0);
         opacity: 1;
+        visibility: visible;
         pointer-events: none;
     }
 
