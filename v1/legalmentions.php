@@ -17,7 +17,7 @@ session_start();
 @import url("static/site.css");
         body {
             margin: 0;
-            min-height: 100vh;
+            min-height: var(--viewport-height);
             color: var(--text);
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: transparent;
@@ -119,7 +119,7 @@ session_start();
             margin-left: clamp(0.25rem, 1vw, 0.3125rem);
             padding: clamp(0.5rem, 2vw, 0.9rem);
             padding-bottom: clamp(10rem, 14vw, 12rem);
-            min-height: calc(100vh + 12rem);
+            min-height: calc(var(--viewport-height) + 12rem);
             background: rgba(7, 16, 34, 0.72) !important;
             border-radius: 12px !important;
             position: relative;
@@ -211,14 +211,32 @@ session_start();
                     var footer = document.querySelector('.site-footer');
                     if(!footer) return;
                     footer.classList.add('hide-until-bottom');
+
+                    function updateViewportHeight() {
+                        var height = window.innerHeight || document.documentElement.clientHeight || 1;
+                        document.documentElement.style.setProperty('--viewport-height', height + 'px');
+                    }
+
                     function checkFooter(){
                         var atBottom = (window.innerHeight + window.pageYOffset) >= (document.documentElement.scrollHeight - 10);
-                        if(atBottom){ footer.classList.add('visible'); } else { footer.classList.remove('visible'); }
+                        footer.classList.toggle('visible', atBottom);
                     }
-                    window.addEventListener('scroll', checkFooter);
-                    window.addEventListener('resize', checkFooter);
-                    document.addEventListener('DOMContentLoaded', checkFooter);
-                    checkFooter();
+
+                    function syncFooter() {
+                        updateViewportHeight();
+                        checkFooter();
+                    }
+
+                    window.addEventListener('scroll', checkFooter, { passive: true });
+                    window.addEventListener('resize', syncFooter, { passive: true });
+                    window.addEventListener('orientationchange', syncFooter, { passive: true });
+                    window.addEventListener('pageshow', syncFooter);
+                    document.addEventListener('DOMContentLoaded', function() {
+                        requestAnimationFrame(syncFooter);
+                    });
+                    window.addEventListener('load', syncFooter);
+                    window.setTimeout(syncFooter, 0);
+                    window.setTimeout(syncFooter, 150);
                 })();
             </script>
         </div>

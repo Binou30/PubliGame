@@ -12,6 +12,13 @@
   --danger: #ff5c7d;
   --border: rgba(96, 148, 255, 0.18);
   --shadow: 0 24px 70px rgba(0, 14, 38, 0.32);
+  --viewport-height: 100vh;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --viewport-height: 100dvh;
+  }
 }
 
 * {
@@ -33,7 +40,7 @@ html {
 
 body {
   margin: 0 !important;
-  min-height: 100vh !important;
+  min-height: var(--viewport-height) !important;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
   color: var(--text) !important;
   background: linear-gradient(180deg, #020613 0%, #05132b 35%, #081e35 70%, #061929 100%) !important;
@@ -54,7 +61,7 @@ body::before {
 
 .cadre {
   position: relative !important;
-  min-height: 100vh !important;
+  min-height: var(--viewport-height) !important;
   border-radius: 24px !important;
   background: rgba(7, 16, 34, 0.84) !important;
   border: 1px solid var(--border) !important;

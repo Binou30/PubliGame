@@ -97,8 +97,8 @@ unset($_SESSION['messages']);
         }
         body {
             margin: 0;
-            min-height: 100vh;
-            height: 100vh;
+            min-height: var(--viewport-height);
+            height: var(--viewport-height);
             overflow: hidden;
             color: var(--text);
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -190,7 +190,7 @@ unset($_SESSION['messages']);
     .body {
         margin-left: clamp(0.25rem, 1vw, 0.3125rem);
         padding: clamp(0.5rem, 2vw, 1rem);
-        min-height: calc(100vh - clamp(2rem, 4vw, 3rem));
+        min-height: calc(var(--viewport-height) - clamp(2rem, 4vw, 3rem));
         text-align: left;
     }
     body.logged-in .body {
