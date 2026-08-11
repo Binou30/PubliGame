@@ -11,7 +11,7 @@ if (!isset($_POST['fichier']) || !isset($_POST['vote']) || !isset($_SESSION['use
 $fichier = basename($_POST['fichier']);
 $type_vote = ($_POST['vote'] === 'like') ? 'like' : 'dislike';
 $displayUsername = trim($_SESSION['username']);
-$username = strtolower($displayUsername); // Normaliser en minuscules pour la clé de vote
+$username = strtolower($displayUsername);
 $vote_file = $vote_dir . '/' . $fichier . '.txt';
 
 $likes = 0;
