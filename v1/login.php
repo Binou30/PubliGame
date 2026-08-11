@@ -64,8 +64,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <?php endforeach; ?>
                     </ul><br />
                 <?php endif; ?>
-                <button type="button" onclick="window.location.href='index.php'">Retour à l'accueil</button>
-                <button type="submit">Se connecter</button>
+                <div class="button-group">
+                    <button type="button" onclick="window.location.href='index.php'">Retour à l'accueil</button>
+                    <button type="submit">Se connecter</button>
+                </div>
             </form>
             <?php include_once dirname(__FILE__) . '/footer.php'; ?>
         </div>

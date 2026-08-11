@@ -74,8 +74,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php if ($message != ''): ?>
                     <p class="form-message"><b><?php echo htmlspecialchars($message); ?></b></p>
                 <?php endif; ?>
-                <button type="button" onclick="window.location.href='index.php'">Retour à l'accueil</button>
-                <button type="submit">Créer le compte</button>
+                <div class="button-group">
+                    <button type="button" onclick="window.location.href='index.php'">Retour à l'accueil</button>
+                    <button type="submit">Se connecter</button>
+                </div>
             </form>
             <?php include_once dirname(__FILE__) . '/footer.php'; ?>
         </div>
